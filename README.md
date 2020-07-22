@@ -1,2 +1,2 @@
 # MachineLearning_projects
-Applying the fundamental concepts of Machine Learning in python
+Applying the fundamental algorithms of Machine Learning in python
