@@ -88,7 +88,7 @@ for deg,k in zip(degree,param_theta):
 
 #At degree 8 the curve fits best and provides good result
 #Parameters of degree 8 equation are:-
-parameter = param_theta[7]
+parameter = param_theta[6]
 print(parameter)
 
 #Now Lasso or Ridge Regulrisation can be implemented to fine-tune the model obtained.
