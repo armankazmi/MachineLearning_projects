@@ -11,7 +11,7 @@ from sklearn.metrics import r2_score
 
 
 #Importing data
-data = pd.read_csv("G:\EECS Major\Gaussian_noise_1.csv",header = None, names = ['X','t'])
+data = pd.read_csv("Gaussian_noise_1.csv",header = None, names = ['X','t'])
 y = np.asfarray(data['t'])
 X = np.asfarray(data['X'])
 
@@ -24,17 +24,22 @@ m = X_train.shape
 n = X_test.shape
 
 #Defining Hypothesis function and loss function
+
 def h(X, theta):
     return X @ theta
+    #Loss function
 def J(theta, X, y):
     return np.mean(np.square(h(X, theta) - y))
 
 #Fitting the curve upto degree 15 for better visualization how overfitting starts when degree is increased
+#Also the degree can be increased equal to the number od data points such that no.of degree in equation = no.of data points
+
 degree = []
 for i in range(1,15):
     degree.append(i)
 
-#Curve fitting using matrix multiplication
+    
+#Curve fitting using matrix multiplication from scratch
 residuals = []
 param_theta = []
 for deg in degree:
@@ -85,18 +90,5 @@ for deg,k in zip(degree,param_theta):
 #Parameters of degree 8 equation are:-
 parameter = param_theta[7]
 print(parameter)
+
 #Now Lasso or Ridge Regulrisation can be implemented to fine-tune the model obtained.
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
